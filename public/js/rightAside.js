@@ -65,7 +65,7 @@ function RightAsideStoryViewModel() {
       modelRightAside.myStories.removeAll();
 
       // NY Times Articles API
-      var nytimesURL = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=" +
+      var nytimesURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" +
         modelRightAside.searchTerm() + "&sort=newest&api-key=e479c6ac1a674c7f95ece02baf9419dd";
 
       $.getJSON(nytimesURL, function (data) {
