@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Points of Interest</title>
+
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+
+    <aside class="sideBar">
+      <h1>National Points of Interest</h1>
+      <input id="show-listings" type="button" data-bind="click: view.showListings(model.markers)" value="Show All Markers">
+
+      <hr class="horizontalRule">
+
+      <label>Filter Clickable List By State</label>
+      <input placeholder="Ex. California or ca" data-bind="textInput: filterText" class="textInput" id="filterBy">
+      <br>
+      <br>
+
+      <table id="listView" data-bind="foreach: returnMatches">
+        <tr>
+          <td>
+            <a data-bind="text: title, click: modelRightAside.locationClicked" href="#">Default Text</a>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <br>
+
+    </aside> <!-- end of left aside -->
+
+    <aside id="rsb" class="rightSideBar">
+
+      <h4>New York Times Stories on <span data-bind="text: modelRightAside.searchTerm()"></span></h4>
+
+      <table data-bind="foreach: modelRightAside.myStories">
+        <tr>
+          <td>
+            <a data-bind="attr: { href: uri, title: uri }, text: headline" target="_blank">Default Text</a>
+          </td>
+        </tr>
+        <tr>
+          <td data-bind="text: snippet"></td>
+        </tr>
+      </table>
+
+    </aside> <!-- end of right aside -->
+
+    <div id="map">
+      <h4 id="nonMapText">The map is loading. Please be patient.</h4>
+    </div>
+
+    <!-- scripts below -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+    <script src="js/knockout-3.4.1.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/rightAside.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAbm2mpHRxSmSk-iaI19oMYKFEqDLxZ_k&libraries=places,geometry,drawing&&v=3&callback=initMap"  onerror="googleAPIError()">
+    </script>
+  </body>
+</html>

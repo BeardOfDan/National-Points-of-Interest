@@ -1,0 +1,59 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map { height: 100%; }
+
+.sideBar {
+  width: 20%;
+  height: 100%;
+  max-height: 100%;
+  float: left;
+  padding: 0 7px;
+  overflow-y: scroll;
+}
+
+.horizontalRule { margin: 15px 0 10px; }
+
+.rightSideBar {
+  width: 25%;
+  height: 100%;
+  float: right;
+  padding: 0 7px;
+  overflow-y: scroll;
+}
+
+.visibility { display: none; }
+
+.inputSizingTitle { max-width: 125px; }
+
+.inputSizingLatLng { max-width: 75px; }
+
+.redX { color: red; }
+
+.text { font-size: 12px; }
+
+#toggle-drawing { position: relative; }
+
+#zoom-to-area-text {
+  position: relative;
+  width: 70%;
+}
+
+#zoom-to-area {
+  width: 24%;
+  min-width: 50px;
+}
+
+#search-within-time-text { width: 84%; }
+
+.textInput { width: 70%; }
+
+#listView a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#listView a:visited { color: #000; }
